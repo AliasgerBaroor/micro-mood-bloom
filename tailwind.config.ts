@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// MicroMood custom colors
+				mood: {
+					happy: '#FFD166',
+					calm: '#118AB2',
+					sad: '#073B4C',
+					anxious: '#EF476F',
+					energetic: '#06D6A0',
+					love: '#F2BAC9',
+					neutral: '#8A898C',
+					content: '#9b87f5'
 				}
 			},
 			borderRadius: {
@@ -84,11 +96,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-gentle': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'wave': {
+					'0%': { transform: 'translateX(-100%)' },
+					'50%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(100%)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-gentle': 'pulse-gentle 4s ease-in-out infinite',
+				'wave': 'wave 8s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-calm': 'linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%)',
+				'gradient-joy': 'linear-gradient(90deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%)',
+				'gradient-energy': 'linear-gradient(90deg, hsla(59, 86%, 68%, 1) 0%, hsla(134, 36%, 53%, 1) 100%)',
+				'gradient-love': 'linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)',
 			}
 		}
 	},
