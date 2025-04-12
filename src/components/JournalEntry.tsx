@@ -13,13 +13,13 @@ interface JournalEntryProps {
 
 const getPromptForMood = (mood: MoodType): string => {
   const prompts = {
-    'happy': 'What made you happy today? How can you create more moments like this?',
-    'calm': 'Describe the peaceful moments in your day. What contributed to your sense of calm?',
-    'sad': 'What's weighing on your mind today? Remember that all emotions are valid.',
-    'anxious': 'What's causing you to feel anxious? Try naming specific thoughts or concerns.',
-    'energetic': 'What's giving you energy today? How might you channel this positively?',
-    'love': 'What or who are you feeling connected to today? How does this affect you?',
-    'neutral': 'How would you describe your neutral state today? Is it peaceful, empty, or balanced?'
+    happy: 'What made you happy today? How can you create more moments like this?',
+    calm: 'Describe the peaceful moments in your day. What contributed to your sense of calm?',
+    sad: 'What's weighing on your mind today? Remember that all emotions are valid.',
+    anxious: 'What's causing you to feel anxious? Try naming specific thoughts or concerns.',
+    energetic: 'What's giving you energy today? How might you channel this positively?',
+    love: 'What or who are you feeling connected to today? How does this affect you?',
+    neutral: 'How would you describe your neutral state today? Is it peaceful, empty, or balanced?'
   };
   
   return prompts[mood];
