@@ -64,7 +64,7 @@ const HabitsPage = () => {
     {
       id: '5',
       title: 'Quick Gratitude',
-      description: 'Write down three specific things you're grateful for right now.',
+      description: 'Write down three specific things you&apos;re grateful for right now.',
       category: 'anxious',
       duration: '2 min',
       isFavorite: false,

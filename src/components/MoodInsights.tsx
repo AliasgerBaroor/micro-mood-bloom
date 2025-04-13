@@ -21,7 +21,7 @@ const dominantMood: MoodType = 'calm';
 // This would be generated based on the user's mood patterns
 const habitSuggestions = {
   'happy': [
-    { title: 'Express Gratitude', description: 'Write down three things you're grateful for to sustain positive feelings.' },
+    { title: 'Express Gratitude', description: 'Write down three things you&apos;re grateful for to sustain positive feelings.' },
     { title: 'Share Joy', description: 'Reach out to someone you care about to share your positive energy.' }
   ],
   'calm': [

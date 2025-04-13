@@ -27,7 +27,7 @@ const mockJournalEntries: JournalEntryType[] = [
   {
     id: '1',
     title: 'Finding balance in chaos',
-    content: 'Today was particularly overwhelming with work deadlines piling up. I noticed my anxiety building throughout the morning, but took a 15-minute walk outside during lunch which helped clear my mind. I'm learning that small breaks make a big difference in my mental state.',
+    content: 'Today was particularly overwhelming with work deadlines piling up. I noticed my anxiety building throughout the morning, but took a 15-minute walk outside during lunch which helped clear my mind. I&apos;m learning that small breaks make a big difference in my mental state.',
     date: '2025-04-10T14:30:00Z',
     tags: ['anxious', 'calm'],
     isSaved: true,
@@ -35,7 +35,7 @@ const mockJournalEntries: JournalEntryType[] = [
   {
     id: '2',
     title: 'Unexpected moments of joy',
-    content: 'Had a surprise video call with my college friends today. We haven't all been together in one call for months, and hearing everyone's laughter made me realize how much I've missed them. These connections are so precious.',
+    content: 'Had a surprise video call with my college friends today. We haven&apos;t all been together in one call for months, and hearing everyone&apos;s laughter made me realize how much I&apos;ve missed them. These connections are so precious.',
     date: '2025-04-08T20:15:00Z',
     tags: ['happy', 'love'],
     isSaved: false,
@@ -43,7 +43,7 @@ const mockJournalEntries: JournalEntryType[] = [
   {
     id: '3',
     title: 'Reflections on change',
-    content: 'Change has always been difficult for me. As I prepare for the upcoming move to a new city, I'm feeling a mix of excitement and apprehension. Today I packed my first box of books - it made everything feel suddenly real.',
+    content: 'Change has always been difficult for me. As I prepare for the upcoming move to a new city, I&apos;m feeling a mix of excitement and apprehension. Today I packed my first box of books - it made everything feel suddenly real.',
     date: '2025-04-05T18:45:00Z',
     tags: ['anxious', 'neutral'],
     isSaved: false,

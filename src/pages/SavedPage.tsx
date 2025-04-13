@@ -54,7 +54,7 @@ const SavedPage = () => {
         id: '2',
         type: 'journal',
         title: 'Finding balance in chaos',
-        content: 'Today was particularly overwhelming with work deadlines piling up. I noticed my anxiety building throughout the morning, but took a 15-minute walk outside during lunch which helped clear my mind. I'm learning that small breaks make a big difference in my mental state.',
+        content: 'Today was particularly overwhelming with work deadlines piling up. I noticed my anxiety building throughout the morning, but took a 15-minute walk outside during lunch which helped clear my mind. I&apos;m learning that small breaks make a big difference in my mental state.',
         tags: ['anxious', 'calm'],
         timestamp: '2025-04-09T18:45:00Z'
       },
@@ -70,7 +70,7 @@ const SavedPage = () => {
         id: '4',
         type: 'journal',
         title: 'Unexpected moments of joy',
-        content: 'Had a surprise video call with my college friends today. We haven't all been together in one call for months, and hearing everyone's laughter made me realize how much I've missed them. These connections are so precious.',
+        content: 'Had a surprise video call with my college friends today. We haven&apos;t all been together in one call for months, and hearing everyone&apos;s laughter made me realize how much I&apos;ve missed them. These connections are so precious.',
         tags: ['happy', 'love'],
         timestamp: '2025-04-07T16:20:00Z'
       },
