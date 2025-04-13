@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -21,6 +22,8 @@ import HabitManagementPage from "./pages/admin/HabitManagementPage";
 import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
 import MoodImageManagerPage from "./pages/admin/MoodImageManagerPage";
 import AdminProfilePage from './pages/admin/AdminProfilePage';
+import EditProfilePage from './pages/admin/EditProfilePage';
+import ActivityDetailPage from './pages/admin/ActivityDetailPage';
 
 const queryClient = new QueryClient();
 
@@ -55,6 +58,8 @@ const App = () => (
                 <Route path="mood-images" element={<MoodImageManagerPage />} />
                 <Route path="settings" element={<AdminSettingsPage />} />
                 <Route path="profile" element={<AdminProfilePage />} />
+                <Route path="profile/edit" element={<EditProfilePage />} />
+                <Route path="profile/activity/:activityId" element={<ActivityDetailPage />} />
               </Route>
             </Route>
             

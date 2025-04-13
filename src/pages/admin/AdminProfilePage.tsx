@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -18,40 +19,54 @@ const adminData = {
 // Mocked recent activities
 const recentActivities = [
   { 
-    id: 1, 
+    id: "1", 
     action: "Uploaded new mood images", 
     count: 5, 
     timestamp: "Today, 2:30 PM", 
     icon: Upload,
-    period: "Today"
+    period: "Today",
+    actionType: "add"
   },
   { 
-    id: 2, 
+    id: "2", 
     action: "Added new micro-habits", 
     count: 3, 
     timestamp: "Today, 11:20 AM", 
     icon: Plus,
-    period: "Today"
+    period: "Today",
+    actionType: "add"
   },
   { 
-    id: 3, 
+    id: "3", 
     action: "Added new employees", 
     count: 2, 
     timestamp: "Yesterday, 4:15 PM", 
     icon: UserPlus,
-    period: "This Week"
+    period: "This Week",
+    actionType: "add"
   },
   { 
-    id: 4, 
+    id: "4", 
     action: "Removed employee", 
     count: 1, 
     timestamp: "Apr 10, 2025", 
     icon: UserMinus,
-    period: "Earlier"
+    period: "Earlier",
+    actionType: "delete"
   }
 ];
 
 const AdminProfilePage = () => {
+  const navigate = useNavigate();
+  
+  const handleEditProfile = () => {
+    navigate('/admin/profile/edit');
+  };
+  
+  const handleActivityClick = (activityId: string) => {
+    navigate(`/admin/profile/activity/${activityId}`);
+  };
+
   return (
     <div className="space-y-6 animate-fade-in">
       <h1 className="text-3xl font-bold">My Profile</h1>
@@ -64,7 +79,7 @@ const AdminProfilePage = () => {
             <AvatarImage src={adminData.profileImage} alt={adminData.name} />
             <AvatarFallback className="text-xl">{adminData.name.charAt(0)}</AvatarFallback>
           </Avatar>
-          <Button variant="outline" size="sm" className="mt-14 gap-2">
+          <Button variant="outline" size="sm" className="mt-14 gap-2" onClick={handleEditProfile}>
             <Edit size={16} />
             Edit Profile
           </Button>
@@ -104,9 +119,17 @@ const AdminProfilePage = () => {
                 <h3 className="text-sm text-muted-foreground mb-2">{period}</h3>
                 <div className="space-y-3">
                   {periodActivities.map((activity) => (
-                    <div key={activity.id} className="flex items-start gap-3 p-2 rounded-md hover:bg-accent/40 transition-colors">
-                      <div className="rounded-full bg-primary/10 p-2">
-                        <activity.icon size={18} className="text-primary" />
+                    <div 
+                      key={activity.id} 
+                      className="flex items-start gap-3 p-2 rounded-md hover:bg-accent/40 transition-colors cursor-pointer"
+                      onClick={() => handleActivityClick(activity.id)}
+                    >
+                      <div className={`rounded-full p-2 ${
+                        activity.actionType === 'delete' 
+                          ? 'bg-red-500/10 text-red-500' 
+                          : 'bg-primary/10 text-primary'
+                      }`}>
+                        <activity.icon size={18} />
                       </div>
                       <div className="flex-1">
                         <div className="flex justify-between">
