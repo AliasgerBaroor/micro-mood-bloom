@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
@@ -7,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useTheme } from '@/hooks/useTheme';
-import { Sun, Moon } from 'lucide-react';
 
 const AdminSettingsPage = () => {
   const { toast } = useToast();
@@ -28,7 +27,7 @@ const AdminSettingsPage = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 overflow-y-auto max-h-[85vh]">
       <h1 className="text-3xl font-bold">Admin Settings</h1>
 
       <div className="grid gap-6">
@@ -91,13 +90,11 @@ const AdminSettingsPage = () => {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <Sun className="h-4 w-4 text-muted-foreground" />
                 <Switch 
                   id="dark-mode" 
                   checked={theme === 'dark'} 
                   onCheckedChange={() => toggleTheme()} 
                 />
-                <Moon className="h-4 w-4 text-muted-foreground" />
               </div>
             </div>
 

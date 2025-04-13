@@ -32,7 +32,7 @@ const AdminLayout = () => {
   return (
     <div className="flex min-h-screen">
       {/* Admin Sidebar */}
-      <div className="hidden md:flex flex-col w-64 bg-primary-foreground border-r border-border">
+      <div className="hidden md:flex flex-col w-64  border-r border-border">
         <div className="p-4 border-b border-border">
           <div className="flex items-center space-x-2">
             <div className="bg-primary text-primary-foreground font-bold py-1 px-2 rounded text-xs">ADMIN</div>
@@ -70,14 +70,6 @@ const AdminLayout = () => {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={toggleTheme} 
-                title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-              >
-                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-              </Button>
               <Button variant="ghost" size="icon" onClick={handleLogout}>
                 <LogOut size={18} />
               </Button>
