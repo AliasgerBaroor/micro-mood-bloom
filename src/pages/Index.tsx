@@ -136,7 +136,7 @@ const Index = () => {
       <div className="flex-1 flex flex-col">
         <Header toggleTheme={toggleTheme} theme={theme} />
         
-        <main className="flex-1 container max-w-5xl py-6 px-4 md:py-10 md:px-6 relative">
+        <main className="flex-1 container max-w-5xl py-6 px-4 md:py-10 md:px-6 relative overflow-y-auto max-h-[85vh]">
           <div className="space-y-10">
             {/* Date Display */}
             <div className="text-center">
@@ -197,7 +197,7 @@ const Index = () => {
                 )}
               </section>
             )}
-            
+              
             <Separator className="my-8" />
             
             {/* Quick Journal Section with MoodScape */}

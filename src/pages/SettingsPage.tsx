@@ -60,7 +60,7 @@ const SettingsPage = () => {
       <div className="flex-1 flex flex-col">
         <Header toggleTheme={toggleTheme} theme={theme} />
         
-        <main className="flex-1 container max-w-5xl py-6 px-4 md:py-10 md:px-6">
+        <main className="flex-1 container max-w-5xl py-6 px-4 md:py-10 md:px-6  overflow-y-auto max-h-[85vh]">
           <h1 className="text-3xl font-bold mb-8">Settings</h1>
           
           <Tabs defaultValue="profile" className="space-y-8">
@@ -307,7 +307,7 @@ const SettingsPage = () => {
                   </ul>
                 </CardContent>
                 <CardFooter className="relative">
-                  <Button className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90">
+                  <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90">
                     Upgrade Now
                   </Button>
                 </CardFooter>

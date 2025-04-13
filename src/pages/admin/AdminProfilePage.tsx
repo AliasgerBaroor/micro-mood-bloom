@@ -68,7 +68,7 @@ const AdminProfilePage = () => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in overflow-y-auto max-h-[85vh]">
       <h1 className="text-3xl font-bold">My Profile</h1>
       
       {/* Profile Card */}

@@ -78,7 +78,16 @@ const JournalEntry: React.FC<JournalEntryProps> = ({ selectedMood, onSaveEntry }
     });
   };
   
-  const handleDownloadImage = () => {
+  const handleDownloadImage = (imageUrl : string) => {
+    const downloadName = `moodscape-${imageUrl.split("/").pop()}`;
+
+    const link = document.createElement("a");
+    link.href = imageUrl;
+    link.download = downloadName; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  
     toast({
       title: "Image downloaded",
       description: "MoodScape saved to your device",
@@ -136,7 +145,7 @@ const JournalEntry: React.FC<JournalEntryProps> = ({ selectedMood, onSaveEntry }
                   Here's a visual to match your feeling. Take a moment to breathe.
                 </p>
                 
-                <div className="relative rounded-lg overflow-hidden animate-scale-in">
+                <div className="relative rounded-lg overflow-hidden animate-scale-in pt-[120px]">
                   {/* Placeholder image based on mood */}
                   <div 
                     className={`w-full h-64 md:h-80 bg-gradient-to-br ${
@@ -145,9 +154,10 @@ const JournalEntry: React.FC<JournalEntryProps> = ({ selectedMood, onSaveEntry }
                         : 'from-blue-50 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30'
                     } flex items-center justify-center`}
                   >
-                    <p className="text-center p-4 font-medium">
+                    <img src={selectedMood === "happy" ? "/assets/happy-1.jpg" : "/assets/sad-3.jpg"} alt="demo" />
+                    {/* <p className="text-center p-4 font-medium">
                       {getImagePromptForMood(selectedMood)}
-                    </p>
+                    </p> */}
                   </div>
                   
                   <div className="absolute inset-0 shadow-inner"></div>
@@ -160,7 +170,7 @@ const JournalEntry: React.FC<JournalEntryProps> = ({ selectedMood, onSaveEntry }
                 </p>
                 
                 <div className="flex justify-between mt-4">
-                  <Button variant="outline" size="sm" onClick={handleDownloadImage}>
+                  <Button variant="outline" size="sm" onClick={()=> handleDownloadImage("/assets/happy-1.jpg")}>
                     <Download size={16} className="mr-2" />
                     Download
                   </Button>
