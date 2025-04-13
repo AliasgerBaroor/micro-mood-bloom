@@ -200,7 +200,7 @@ const Index = () => {
             
             <Separator className="my-8" />
             
-            {/* Quick Journal Section */}
+            {/* Quick Journal Section with MoodScape */}
             <section className="space-y-6">
               <h2 className="text-xl font-semibold">Want to journal more?</h2>
               <JournalEntry selectedMood={selectedMood} onSaveEntry={handleSaveEntry} />
