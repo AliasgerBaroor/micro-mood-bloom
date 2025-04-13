@@ -20,6 +20,7 @@ import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
 import EmployeeManagementPage from "./pages/admin/EmployeeManagementPage";
 import HabitManagementPage from "./pages/admin/HabitManagementPage";
 import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
+import MoodImageManagerPage from "./pages/admin/MoodImageManagerPage";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
                 <Route index element={<AdminDashboardPage />} />
                 <Route path="employees" element={<EmployeeManagementPage />} />
                 <Route path="habits" element={<HabitManagementPage />} />
+                <Route path="mood-images" element={<MoodImageManagerPage />} />
                 <Route path="settings" element={<AdminSettingsPage />} />
               </Route>
             </Route>

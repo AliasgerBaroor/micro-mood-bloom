@@ -6,12 +6,14 @@ import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
+import { useTheme } from '@/hooks/useTheme';
+import { Sun, Moon } from 'lucide-react';
 
 const AdminSettingsPage = () => {
   const { toast } = useToast();
+  const { theme, toggleTheme } = useTheme();
   const [autoSuggestHabits, setAutoSuggestHabits] = useState(true);
   const [defaultMood, setDefaultMood] = useState('neutral');
-  const [darkMode, setDarkMode] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(true);
 
   const handleSaveSettings = () => {
@@ -88,11 +90,15 @@ const AdminSettingsPage = () => {
                   Enable dark mode for the admin interface
                 </p>
               </div>
-              <Switch 
-                id="dark-mode" 
-                checked={darkMode} 
-                onCheckedChange={setDarkMode} 
-              />
+              <div className="flex items-center gap-2">
+                <Sun className="h-4 w-4 text-muted-foreground" />
+                <Switch 
+                  id="dark-mode" 
+                  checked={theme === 'dark'} 
+                  onCheckedChange={() => toggleTheme()} 
+                />
+                <Moon className="h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
 
             <div className="flex items-center justify-between">
