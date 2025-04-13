@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { UsersRound, HeartPulse, CalendarCheck, Activity } from 'lucide-react';
+import { UsersRound, HeartPulse, Sparkles,  CalendarCheck, Activity } from 'lucide-react';
 
 const AdminDashboardPage = () => {
   return (

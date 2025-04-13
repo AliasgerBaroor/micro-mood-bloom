@@ -14,14 +14,13 @@ export interface User {
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<User>;
   signup: (name: string, email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Mock user data - would be replaced with real API calls
 const MOCK_USERS = [
   { id: '1', email: 'admin@micromood.com', name: 'Admin User', password: 'admin123', role: 'admin' as UserRole },
   { id: '2', email: 'user@micromood.com', name: 'Regular User', password: 'user123', role: 'user' as UserRole },
@@ -40,25 +39,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(false);
   }, []);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string): Promise<User> => {
     setIsLoading(true);
     try {
-      // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+  
       const matchedUser = MOCK_USERS.find(u => u.email === email && u.password === password);
-      
+  
       if (!matchedUser) {
         throw new Error('Invalid credentials');
       }
-      
+  
       const { password: _, ...userWithoutPassword } = matchedUser;
       setUser(userWithoutPassword);
       localStorage.setItem('micromood-user', JSON.stringify(userWithoutPassword));
+  
+      return userWithoutPassword; // ✅ return user
     } finally {
       setIsLoading(false);
     }
   };
+  
 
   const signup = async (name: string, email: string, password: string) => {
     setIsLoading(true);

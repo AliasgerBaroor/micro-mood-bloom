@@ -22,7 +22,7 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, user } = useAuth();
   const { toast } = useToast();
   
   const form = useForm<LoginFormValues>({
@@ -35,11 +35,9 @@ const LoginPage = () => {
 
   const onSubmit = async (values: LoginFormValues) => {
     try {
-      await login(values.email, values.password);
-      const { user } = useAuth();
-      
-      // Redirect based on user role
-      if (user?.role === 'admin') {
+      const loggedInUser = await login(values.email, values.password);
+
+      if (loggedInUser?.role === 'admin') {
         navigate('/admin');
       } else {
         navigate('/');
